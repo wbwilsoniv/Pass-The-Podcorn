@@ -16,7 +16,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "debugger": "DEBUG=*:* nodemon server.js"
+    "debugger": "DEBUG=*:* nodemon server.js",
+    "db:migrate:dev": "psql -d podcast_db -f db/schema.sql",
+    "db:seed:dev": "psql -d podcast_db -f db/seed.sql"
   },
   "keywords": [],
   "author": "",

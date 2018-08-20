@@ -5,6 +5,7 @@ CREATE TABLE podcasts (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     creator VARCHAR(255) NOT NULL,
+    genre VARCHAR(255) NOT NULL,
     episodes INTEGER NOT NULL,
     description TEXT,
     poster_url VARCHAR(255),
@@ -19,3 +20,4 @@ CREATE TABLE reviews (
     upvote INTEGER DEFAULT 0,
     downvote INTEGER DEFAULT 0
 )
+

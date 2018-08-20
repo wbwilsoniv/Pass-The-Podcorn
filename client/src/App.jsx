@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import PodcastIndex from './PodcastIndex';
 import './App.css';
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <PodcastIndex />
       </div>
     );
   }

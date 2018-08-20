@@ -9,8 +9,8 @@ INSERT INTO podcasts (title, creator, genre, episodes, description, poster_url, 
     'Horror',
     243,
     'In the spring of 2010, a new forum appeared on Reddit.com. It was called “Nosleep” and the concept of this forum  was to be a place for people to post original scary stories about frightening experiences. It was an online version of telling spooky stories around the campfire.A year later, as Nosleep was growing at a rapid pace, one member named Matt Hansen proposed the idea of doing a podcast where some of the top stories from Nosleep would be narrated in audiobook style.',
-    'https://www.thenosleeppodcast.com/wp-content/uploads/2014/09/NoSleep.Podcast.S4.Logo_1400.jpg'
-    ''
+    'https://www.thenosleeppodcast.com/wp-content/uploads/2014/09/NoSleep.Podcast.S4.Logo_1400.jpg',
+    'https://www.thenosleeppodcast.com/'
 ),
 (   'You made it weird',
     'Pete Holmes',
@@ -33,7 +33,7 @@ INSERT INTO podcasts (title, creator, genre, episodes, description, poster_url, 
     'Whats Good Games',
     'Gaming',
     66,
-    'Welcome to Whats Good Games, an upbeat show for the nerd-inclined and your source for video game news, analysis, commentary and funny stuff. '
+    'Welcome to Whats Good Games, an upbeat show for the nerd-inclined and your source for video game news, analysis, commentary and funny stuff. ',
     'http://cdn-profiles.tunein.com/p1012004/images/bannerx.jpg?t=636354620670000000',
     'https://whatsgoodgames.com/'
 ),
@@ -51,7 +51,7 @@ INSERT INTO reviews (username, content, podcast_id) VALUES
 (
 'PodcastLover',
 'Lately, one of my favorites is a podcast produced by Gimlet Media called Crimetown.',
-5
+1
 ),
 (
 'Scary4Life',

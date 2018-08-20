@@ -1,5 +1,6 @@
-DROP TABLE IF EXISTS podcasts;
 DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS podcasts;
+
 
 CREATE TABLE podcasts (
     id SERIAL PRIMARY KEY,
@@ -16,7 +17,7 @@ CREATE TABLE reviews (
     review_id SERIAL PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
-    podcast_id INTEGER NOT NULL REFERENCES podcasts(id),
+    podcast_id INTEGER NOT NULL REFERENCES podcasts(id) ON DELETE CASCADE,
     upvote INTEGER DEFAULT 0,
     downvote INTEGER DEFAULT 0
 )

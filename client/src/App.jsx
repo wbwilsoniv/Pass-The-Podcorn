@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import CreatePodcast from './components/CreatePodcast';
+<<<<<<< HEAD
 import Header from './components/Header';
+=======
+import EditPodcast from './components/EditPodcast';
+>>>>>>> upstream/master
 import PodcastIndex from './components/PodcastIndex';
-import { fetchPodcasts, savePodcast } from './services/api';
+import { fetchPodcasts, savePodcast, fetchReviews, updatePodcast, fetchOnePodcast } from './services/api';
 import './App.css';
 import Footer from './components/Footer';
 
@@ -14,21 +18,65 @@ class App extends Component {
       currentView: 'Podcasts',
       selectedReview: '',
       podcasts: [],
-      reviews: []
+      reviews: [],
+      createModal: 'modal',
+      selectedPodcast: ''
     }
+    this.createPodcast = this.createPodcast.bind(this)
+    this.toggleCreateModal =  this.toggleCreateModal.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
+    this.updatePodcast =  this.updatePodcast.bind(this)
   }
 
 componentDidMount() {
    fetchPodcasts()
   .then(data => this.setState({podcasts: data}));
 
-  fetchReviews() 
-    .then(data => this.setState({reviews: data}));
 
-}
+    // fetchReviews(1) 
+    // .then(data => this.setState({reviews: data}));
+
+     //fetchOnePodcast(1)
+     //.then(data =>  this.setState({podcasts:data}));
+  }
+
+
+
+  updatePodcast(podcast) {
+    fetchOnePodcast(podcast)
+    .then(data => {
+      this.setState({
+        selectedPodcast:data
+      });
+    })
+  }
+
+
+
+  
 
   onSubmit(podcast) {
+    debugger
+    savePodcast(podcast)
+    .then(data => {
+      fetchPodcasts()
+      .then(data => this.setState({podcasts:data}));
+  })
+  }
+
+  toggleCreateModal() {
+    this.state.createModal === 'modal'
+    ?
+      this.setState({
+        createModal: 'modal is-active'
+      })
+    :
+    this.setState({
+      createModal: 'modal'
+    })
+  }
+
+  createPodcast(podcast) {
     savePodcast(podcast)
     .then(data => {
       fetchPodcasts()
@@ -39,14 +87,25 @@ componentDidMount() {
 render() {
   return (
     <div className="App">
+<<<<<<< HEAD
     <Header />
     <PodcastIndex podcasts={this.state.podcasts} />
     <CreatePodcast onSubmit={this.onSubmit}/>
     <Footer />
+=======
+    <PodcastIndex edit={this.updatePodcast} podcasts={this.state.podcasts} />
+    <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleCreateModal}/>
+    {this.state.selectedPodcast ?
+    <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast}/>
+    : null}
+>>>>>>> upstream/master
     </div>
   );
 }
 }
+
+
+
 
 
 

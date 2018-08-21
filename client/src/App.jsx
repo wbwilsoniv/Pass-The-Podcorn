@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CreatePodcast from './components/CreatePodcast';
-
+import Header from './components/Header';
 import PodcastIndex from './components/PodcastIndex';
 import { fetchPodcasts } from './services/api';
 import './App.css';
@@ -26,6 +26,7 @@ class App extends Component {
 render() {
   return (
     <div className="App">
+    <Header />
     <PodcastIndex podcasts={this.state.podcasts} />
     <CreatePodcast />
     </div>

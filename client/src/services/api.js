@@ -21,8 +21,9 @@ export function fetchPodcasts() {
       .then(resp => resp.json());
   }
   
-  export function fetchReviews() {
-    return fetch(`${BASE_URL}/podcasts/podcast/:id`)
+
+  export function fetchReviews(podcast_id) {
+    return fetch(`${BASE_URL}/reviews/podcast/${podcast_id}`)
       .then(resp => resp.json())
       .catch(err => {
         throw Error(err);

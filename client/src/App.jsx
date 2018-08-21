@@ -18,11 +18,14 @@ class App extends Component {
     this.onSubmit = this.onSubmit.bind(this)
   }
 
-  componentDidMount() {
-    fetchPodcasts()
-      .then(data => this.setState({podcasts:data}));
+componentDidMount() {
+   fetchPodcasts()
+  .then(data => this.setState({podcasts: data}));
 
-  }
+  fetchReviews() 
+    .then(data => this.setState({reviews: data}));
+
+}
 
   onSubmit(podcast) {
     savePodcast(podcast)

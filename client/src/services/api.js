@@ -21,3 +21,12 @@ export function fetchPodcasts() {
       .then(resp => resp.json());
   }
   
+  export function fetchReviews() {
+    return fetch(`${BASE_URL}/podcasts/podcast/:id`)
+      .then(resp => resp.json())
+      .catch(err => {
+        throw Error(err);
+      })
+  }
+
+

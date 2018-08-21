@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import CreatePodcast from './components/CreatePodcast';
 import EditPodcast from './components/EditPodcast';
-
 import PodcastIndex from './components/PodcastIndex';
-
 import { fetchPodcasts, savePodcast, fetchReviews, updatePodcast, fetchOnePodcast } from './services/api';
-
 import './App.css';
 
 class App extends Component {
@@ -17,8 +14,11 @@ class App extends Component {
       selectedReview: '',
       podcasts: [],
       reviews: [],
-      selectedPodcast: '',
+      createModal: 'modal',
+      selectedPodcast: ''
     }
+    this.createPodcast = this.createPodcast.bind(this)
+    this.toggleCreateModal =  this.toggleCreateModal.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
     this.updatePodcast =  this.updatePodcast.bind(this)
   }
@@ -59,13 +59,31 @@ componentDidMount() {
   })
   }
 
+  toggleCreateModal() {
+    this.state.createModal === 'modal'
+    ?
+      this.setState({
+        createModal: 'modal is-active'
+      })
+    :
+    this.setState({
+      createModal: 'modal'
+    })
+  }
 
+  createPodcast(podcast) {
+    savePodcast(podcast)
+    .then(data => {
+      fetchPodcasts()
+      .then(data => this.setState({podcasts:data}));
+  })
+  }
 
 render() {
   return (
     <div className="App">
     <PodcastIndex edit={this.updatePodcast} podcasts={this.state.podcasts} />
-    <CreatePodcast onSubmit={this.onSubmit}/>
+    <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleCreateModal}/>
     {this.state.selectedPodcast ?
     <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast}/>
     : null}

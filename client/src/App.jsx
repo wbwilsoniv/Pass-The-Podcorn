@@ -4,6 +4,7 @@ import Header from './components/Header';
 import PodcastIndex from './components/PodcastIndex';
 import { fetchPodcasts, savePodcast } from './services/api';
 import './App.css';
+import Footer from './components/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -41,6 +42,7 @@ render() {
     <Header />
     <PodcastIndex podcasts={this.state.podcasts} />
     <CreatePodcast onSubmit={this.onSubmit}/>
+    <Footer />
     </div>
   );
 }

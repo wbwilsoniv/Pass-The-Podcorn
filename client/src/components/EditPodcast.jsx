@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
  
- class CreatePodcast extends Component {
+ class EditPodcast extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      title: '',
-      creator: '',
-      genre: '',
-      episodes: '',
-      description: '',
-      poster_url: '',
-      trailer_url: '' 
+      title: this.props.podcast.title,
+      creator: this.props.podcast.creator,
+      genre: this.props.podcast.genre,
+      episodes: this.props.podcast.episodes,
+      description:this.props.podcast.description,
+      poster_url: this.props.podcast.poster_url,
+      trailer_url: this.props.podcast.trailer_url 
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -20,9 +20,16 @@ import React, { Component } from 'react';
 
   handleSubmit(evt) {
     evt.preventDefault();
-    this.props.onSubmit(this.state);
-     console.log('Submitting', this.state);
-    
+  const data = {
+    title: this.state.title,
+    creator: this.state.creator,
+    genre: this.state.genre,
+    episodes: this.state.episodes,
+    description: this.state.description,
+    poster_url: this.state.poster_url,
+    trailer_url: this.state.trailer_url
+  }
+   this.props.onSubmit(data);
   }
 
   handleChange(evt) {
@@ -35,7 +42,7 @@ import React, { Component } from 'react';
   render() {
      return (
       <div>
-        <h2>Create Podcast</h2>
+        <h2>Edit Podcast</h2>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
@@ -86,11 +93,12 @@ import React, { Component } from 'react';
             onChange={this.handleChange} 
             placeholder="Trailer url"
           />
-          <input type="submit" value="Create Podcast" />
+          <input type="submit" value="Edit Podcast" />
+          <input type="submit" value="Delete Podcast" />
         </form>
       </div>
     );
    }
  }
  
- export default CreatePodcast;
+ export default EditPodcast;

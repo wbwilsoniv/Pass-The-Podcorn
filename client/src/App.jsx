@@ -1,23 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import PodcastIndex from './PodcastIndex';
+import CreatePodcast from './components/CreatePodcast';
+
+import PodcastIndex from './components/PodcastIndex';
+import { fetchPodcasts } from './services/api';
 import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      podcasts = []
+      currentView: 'Podcasts',
+      selectedReview: '',
+      podcasts: [],
+      reviews: []
     }
   }
 
-  render() {
-    return (
-      <div className="App">
-      <PodcastIndex />
-      </div>
-    );
+  componentDidMount() {
+    fetchPodcasts()
+      .then(data => this.setState({podcasts:data}));
+
   }
+
+render() {
+  return (
+    <div className="App">
+    <PodcastIndex podcasts={this.state.podcasts} />
+    <CreatePodcast />
+    </div>
+  );
 }
+}
+
+
+
 
 export default App;

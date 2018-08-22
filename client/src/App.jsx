@@ -86,49 +86,32 @@ fet
 
 render() {
   return (
-<<<<<<< HEAD
-    <div className="App container-grid">
-    <Header />
-    <PodcastIndex edit={this.updatePodcast} podcasts={this.state.podcasts} />
-=======
 
     <div className="App container-grid">
     <Header />
     <PodcastIndex edit={this.updatePodcast} view={this.fetchAllReviews} podcasts={this.state.podcasts} />
->>>>>>> upstream/master
     <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleCreateModal}/>
     {this.state.selectedPodcast ?
     <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast}/>
     : null}
-<<<<<<< HEAD
-=======
-
->>>>>>> upstream/master
-    <div class="container-grid aside-1 podcastDetails">
-        <h3 class="heading-2">Podcast Details<br/>
+    <div className="container-grid aside-1 podcastDetails">
+        <h3 className="heading-2">Podcast Details<br/>
         </h3>
-        <ul class="list-container">
-          <li class="list-item-container"></li>
-          <li class="list-item-container"></li>
-          <li class="list-item-container"></li>
+        <ul className="list-container">
+          <li className="list-item-container"></li>
         </ul>
     </div>
-    <div class="container-grid aside-2 reviews">
-        <h3 class="heading-3">Reviews<br/>
+    <div className="container-grid aside-2 reviews">
+        <h3 className="heading-3">Reviews<br/>
         </h3>
-        <ul class="list-container">
-          <li class="list-item-container"></li>
-          <li class="list-item-container"></li>
-          <li class="list-item-container"></li>
+        <ul className="list-container">
+          <li className="list-item-container"></li>
         </ul>
       </div>
     <Footer />
-<<<<<<< HEAD
-=======
 
     {/* {<ReviewList reviews={this.state.reviews} handleDeleteClick={this.handleDeleteClick} /> } */}
 
->>>>>>> upstream/master
     </div>
   );
 }

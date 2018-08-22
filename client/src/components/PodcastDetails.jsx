@@ -4,7 +4,7 @@ import React from 'react';
 
 export default (props) => {
     return (
-        <div className="container-grid aside-1 reviews">
+        <div className="container-grid aside-1 podcastDetails">
             <h3 className="heading-3">Podcast Details<br />
             </h3>
             <button onClick={(e) => props.edit(props.podcast.id)}>Edit</button>

@@ -81,14 +81,13 @@ class App extends Component {
       fetchPodcasts()
       .then(data => this.setState({ podcasts: data }));
       });
-    })
-  }
+    }
 
 
     searchBar(data) {
       this.setState({
         searchBar: data
-      })
+      });
     }
 
 
@@ -128,29 +127,20 @@ class App extends Component {
         <Header />
         <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleCreateModal} />
         <PodcastIndex edit={this.getOnePodcast} view={this.fetchAllReviews} podcasts={this.state.podcasts} filter={this.state.selectedGenre} filterFunction={this.genreFilter} search={this.searchBar}/>
-        <ReviewIndex reviews={this.state.reviews}/>
         {this.state.selectedPodcast ?
           <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast} active={this.state.editModal} toggle={this.toggleEditModal}/>
           : null}
 
         <div className="container-grid aside-1 podcastDetails">
-        <h3 className="heading-2">Podcast Details<br/>
-        </h3>
-        <ul className="list-container">
-          <li className="list-item-container"></li>
-        </ul>
-    </div>
-    <div className="container-grid aside-2 reviews">
-        <h3 className="heading-3">Reviews<br/>
-        </h3>
-        <ul className="list-container">
-          <li className="list-item-container"></li>
-        </ul>
-      </div>
-    <Footer />
-
-    {/* {<ReviewList reviews={this.state.reviews} handleDeleteClick={this.handleDeleteClick} /> } */}
-      </div>
+          <h3 className="heading-2">Podcast Details<br/>
+          </h3>
+          <ul className="list-container">
+            <li className="list-item-container"></li>
+          </ul>
+        </div>
+        <ReviewIndex reviews={this.state.reviews}/>
+        <Footer />
+     </div>
     );
   }
 }

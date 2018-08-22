@@ -12,3 +12,26 @@ h2 {
   font-size: 27px;
   font-weight: bold;
 }
+
+.button {
+  font-size: 20px;
+}
+.is-danger {
+  margin-left: 130px;
+}
+
+img {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+}
+
+.podcastList {
+  width: 350px;
+  display: inline-block;
+  font-size: 20px;
+}
+
+li {
+  font-size: 20px;
+}

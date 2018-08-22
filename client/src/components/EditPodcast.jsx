@@ -119,18 +119,18 @@ class EditPodcast extends Component {
                   <br />
                   <input
                     type="text"
-                    name="poster"
+                    name="poster_url"
                     value={this.state.poster_url}
                     onChange={this.handleChange}
-                    placeholder="Poster url"
+                    placeholder="Poster Url"
                   />
                   <br />
                   <input
                     type="text"
-                    name="trailer"
+                    name="trailer_url"
                     value={this.state.trailer_url}
                     onChange={this.handleChange}
-                    placeholder="Trailer url"
+                    placeholder="Trailer Url"
                   />
                   <br />
                   {/* <input type="submit" value="Delete Podcast" /> */}
@@ -139,6 +139,7 @@ class EditPodcast extends Component {
                   <footer className="modal-card-foot">
                     <button type="submit" value="Edit Podcast" className="button is-success">Save changes</button>
                     <button onClick={this.toggle} className="button">Cancel</button>
+                    <button className="button is-danger">Delete Podcast</button>
                   </footer>
                 </form>
               </div>

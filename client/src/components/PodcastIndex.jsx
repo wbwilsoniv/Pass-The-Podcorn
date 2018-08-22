@@ -1,17 +1,19 @@
 import React from 'react';
+import SortButtons from './SortButtons';
 
 export default (props) => {
   return (
-  <div>
-    Podcast Index
+  <div className="container-grid main podcasts">
+    <h2 class="heading-1">Podcasts</h2>
+    <SortButtons />
       {props.podcasts.map(podcast => (
-      <div>
+    <div className="list-container">
       <li key={podcast.id}>{podcast.title} {podcast.creator}</li>
       <button onClick={(e) => props.edit(podcast.id)}>Edit</button>
-      </div>
-      ))
-      }
     </div>
+    ))
+    }
+  </div>
   )
 }
 

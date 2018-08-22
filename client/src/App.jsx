@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import CreatePodcast from './components/CreatePodcast';
-<<<<<<< HEAD
 import Header from './components/Header';
-=======
 import EditPodcast from './components/EditPodcast';
->>>>>>> upstream/master
 import PodcastIndex from './components/PodcastIndex';
 import { fetchPodcasts, savePodcast, fetchReviews, updatePodcast, fetchOnePodcast } from './services/api';
 import './App.css';
@@ -86,19 +83,32 @@ componentDidMount() {
 
 render() {
   return (
-    <div className="App">
-<<<<<<< HEAD
+    <div className="App container-grid">
     <Header />
-    <PodcastIndex podcasts={this.state.podcasts} />
-    <CreatePodcast onSubmit={this.onSubmit}/>
-    <Footer />
-=======
     <PodcastIndex edit={this.updatePodcast} podcasts={this.state.podcasts} />
     <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleCreateModal}/>
     {this.state.selectedPodcast ?
     <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast}/>
     : null}
->>>>>>> upstream/master
+    <div class="container-grid aside-1 podcastDetails">
+        <h3 class="heading-2">Podcast Details<br/>
+        </h3>
+        <ul class="list-container">
+          <li class="list-item-container"></li>
+          <li class="list-item-container"></li>
+          <li class="list-item-container"></li>
+        </ul>
+    </div>
+    <div class="container-grid aside-2 reviews">
+        <h3 class="heading-3">Reviews<br/>
+        </h3>
+        <ul class="list-container">
+          <li class="list-item-container"></li>
+          <li class="list-item-container"></li>
+          <li class="list-item-container"></li>
+        </ul>
+      </div>
+    <Footer />
     </div>
   );
 }

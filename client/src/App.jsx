@@ -3,6 +3,7 @@ import CreatePodcast from './components/CreatePodcast';
 import Header from './components/Header';
 import EditPodcast from './components/EditPodcast';
 import PodcastIndex from './components/PodcastIndex';
+import ReviewIndex from './components/ReviewIndex';
 import { fetchPodcasts, savePodcast, fetchReviews, updatePodcast, fetchOnePodcast } from './services/api';
 import './App.css';
 import Footer from './components/Footer';
@@ -23,6 +24,7 @@ class App extends Component {
       searchBar: '',
 
     }
+
     this.createPodcast = this.createPodcast.bind(this)
     this.toggleCreateModal = this.toggleCreateModal.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
@@ -33,6 +35,7 @@ class App extends Component {
     this.genreFilter = this.genreFilter.bind(this);
     this.searchBar = this.searchBar.bind(this);
   }
+
 
   componentDidMount() {
     fetchPodcasts()
@@ -78,13 +81,16 @@ class App extends Component {
       fetchPodcasts()
       .then(data => this.setState({ podcasts: data }));
       });
-    }
+    })
+  }
+
 
     searchBar(data) {
       this.setState({
         searchBar: data
       })
     }
+
 
   onSubmit(podcast) {
     savePodcast(podcast)
@@ -114,6 +120,7 @@ class App extends Component {
           .then(data => this.setState({ podcasts: data }));
       })
   }
+
   render() {
     return (
 
@@ -121,6 +128,7 @@ class App extends Component {
         <Header />
         <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleCreateModal} />
         <PodcastIndex edit={this.getOnePodcast} view={this.fetchAllReviews} podcasts={this.state.podcasts} filter={this.state.selectedGenre} filterFunction={this.genreFilter} search={this.searchBar}/>
+        <ReviewIndex reviews={this.state.reviews}/>
         {this.state.selectedPodcast ?
           <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast} active={this.state.editModal} toggle={this.toggleEditModal}/>
           : null}

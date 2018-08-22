@@ -22,13 +22,9 @@ class App extends Component {
       selectedPodcast: '',
       createModal: 'modal',
       editModal: 'modal',
-      selectedPodcast: '',
       selectedGenre: 'All',
       searchBar: '',
-
-      podcastDetails: [],
-
-
+      podcastDetails: [{}],
     }
 
     this.createPodcast = this.createPodcast.bind(this)
@@ -49,10 +45,12 @@ class App extends Component {
 
   fetchAllReviews(id, title) {
     fetchReviews(id)
-      .then(data => {this.setState({ 
+      .then(data => {
+        this.setState({ 
         reviews: data,
-        podcastDetails: title 
-      }) });
+        podcastDetails: title
+      })}
+     );
   }
   
   toggleEditModal() {

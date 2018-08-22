@@ -5,6 +5,7 @@ import EditPodcast from './components/EditPodcast';
 import PodcastIndex from './components/PodcastIndex';
 import ReviewIndex from './components/ReviewIndex';
 import { fetchPodcasts, savePodcast, fetchReviews, updatePodcast, fetchOnePodcast } from './services/api';
+
 import './App.css';
 import Footer from './components/Footer';
 
@@ -17,11 +18,13 @@ class App extends Component {
       selectedReview: '',
       podcasts: [],
       reviews: [],
+      selectedPodcast: '',
       createModal: 'modal',
       editModal: 'modal',
       selectedPodcast: '',
       selectedGenre: 'All',
       searchBar: '',
+
 
     }
 
@@ -35,7 +38,6 @@ class App extends Component {
     this.genreFilter = this.genreFilter.bind(this);
     this.searchBar = this.searchBar.bind(this);
   }
-
 
   componentDidMount() {
     fetchPodcasts()
@@ -92,6 +94,7 @@ class App extends Component {
     }
 
 
+
   onSubmit(podcast) {
     savePodcast(podcast)
       .then(data => {
@@ -123,7 +126,6 @@ class App extends Component {
 
   render() {
     return (
-
       <div className="App main-grid">
         <Header />
         <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleCreateModal} />
@@ -132,6 +134,7 @@ class App extends Component {
         {this.state.selectedPodcast ?
           <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast} active={this.state.editModal} toggle={this.toggleEditModal}/>
           : null}
+
 
         <div className="container-grid aside-1 podcastDetails">
         <h3 className="heading-2">Podcast Details<br/>

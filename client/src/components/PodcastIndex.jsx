@@ -8,18 +8,15 @@ export default (props) => {
     <SortButtons />
       {props.podcasts.map(podcast => (
 
-    <div className="list-container" key={podcast.id}>
-      <li key={podcast.id}>{podcast.title} {podcast.creator}</li>
-      <button onClick={(e) => props.edit(podcast.id)}>Edit</button>
-      <button onClick={(e) => props.view(podcast.id)}>View</button>
-      </div>
+        <div className="list-container">
+          <li key={podcast.id}>{podcast.title} {podcast.creator}</li>
+          <button onClick={(e) => props.edit(podcast.id)}>Edit</button>
+          <button onClick={(e) => props.view(podcast.id)}>View</button>
+        </div>
       ))
       }
 
     </div>
-    ))
+    );
     }
-  </div>
-  )
-}
 

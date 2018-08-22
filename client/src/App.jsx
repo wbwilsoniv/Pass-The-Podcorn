@@ -87,21 +87,15 @@ fet
 render() {
   return (
 
-    <div className="App container-grid">
+    <div className="App main-grid">
     <Header />
     <PodcastIndex edit={this.updatePodcast} view={this.fetchAllReviews} podcasts={this.state.podcasts} />
     <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleCreateModal}/>
     {this.state.selectedPodcast ?
     <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast}/>
     : null}
-<<<<<<< HEAD
     <div className="container-grid aside-1 podcastDetails">
         <h3 className="heading-2">Podcast Details<br/>
-=======
-
-    <div class="container-grid aside-1 podcastDetails">
-        <h3 class="heading-2">Podcast Details<br/>
->>>>>>> b3716ff3773260215c21eaec6815521ed4bd1973
         </h3>
         <ul className="list-container">
           <li className="list-item-container"></li>

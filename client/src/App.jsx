@@ -83,17 +83,13 @@ class App extends Component {
       fetchPodcasts()
       .then(data => this.setState({ podcasts: data }));
       });
-    })
-  }
-
+    }
 
     searchBar(data) {
       this.setState({
         searchBar: data
       })
     }
-
-
 
   onSubmit(podcast) {
     savePodcast(podcast)
@@ -123,7 +119,7 @@ class App extends Component {
           .then(data => this.setState({ podcasts: data }));
       })
   }
-
+  
   render() {
     return (
       <div className="App main-grid">
@@ -134,8 +130,6 @@ class App extends Component {
         {this.state.selectedPodcast ?
           <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast} active={this.state.editModal} toggle={this.toggleEditModal}/>
           : null}
-
-
         <div className="container-grid aside-1 podcastDetails">
         <h3 className="heading-2">Podcast Details<br/>
         </h3>
@@ -151,8 +145,6 @@ class App extends Component {
         </ul>
       </div>
     <Footer />
-
-    {/* {<ReviewList reviews={this.state.reviews} handleDeleteClick={this.handleDeleteClick} /> } */}
       </div>
     );
   }

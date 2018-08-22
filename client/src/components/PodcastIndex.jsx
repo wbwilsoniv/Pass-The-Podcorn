@@ -27,7 +27,7 @@ class PodcastIndex extends Component {
 
     return (
       <div className="container-grid main podcasts">
-        <h2 class="heading-1">Podcasts</h2>
+        <h2 className="heading-1">Podcasts</h2>
         <SortButtons search={this.handleChange} filterFunction={this.props.filterFunction} searchBar={this.state.search} />
         {afterSearch.map(podcast => (
           <div className="list-container" key={podcast.id}>

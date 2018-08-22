@@ -51,14 +51,5 @@ export function fetchOnePodcast(id){
       throw Error(err);
     })
   };
-  
-
-  export function fetchReviews(podcast_id) {
-    return fetch(`${BASE_URL}/reviews/podcast/${podcast_id}`)
-      .then(resp => resp.json())
-      .catch(err => {
-        throw Error(err);
-      })
-  }
 
 

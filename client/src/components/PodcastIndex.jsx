@@ -5,9 +5,10 @@ export default (props) => {
   <div>
     Podcast Index
       {props.podcasts.map(podcast => (
-      <div>
-      <li key={podcast.id}>{podcast.title} {podcast.creator}</li>
+      <div key={podcast.id}>
+      <li >{podcast.title} {podcast.creator}</li>
       <button onClick={(e) => props.edit(podcast.id)}>Edit</button>
+      <button onClick={(e) => props.view(podcast.id)}>View</button>
       </div>
       ))
       }

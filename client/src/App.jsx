@@ -25,6 +25,7 @@ class App extends Component {
       selectedPodcast: '',
       selectedGenre: 'All',
       searchBar: '',
+
       podcastDetails: [],
 
 

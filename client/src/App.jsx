@@ -18,23 +18,26 @@ class App extends Component {
       reviews: [],
       createModal: 'modal',
       selectedPodcast: ''
+      
     }
     this.createPodcast = this.createPodcast.bind(this)
     this.toggleCreateModal =  this.toggleCreateModal.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
-    this.updatePodcast =  this.updatePodcast.bind(this)
+    this.updatePodcast =  this.updatePodcast.bind(this);
+    this.fetchAllReviews = this.fetchAllReviews.bind(this);
   }
 
 componentDidMount() {
    fetchPodcasts()
   .then(data => this.setState({podcasts: data}));
 
-
-    // fetchReviews(1) 
-    // .then(data => this.setState({reviews: data}));
-
      //fetchOnePodcast(1)
-     //.then(data =>  this.setState({podcasts:data}));
+     //.then(data =>  this.setState({podcasts:data}));*/
+  }
+
+  fetchAllReviews(id) {
+    fetchReviews(id) 
+    .then(data => {console.log(data); this.setState({reviews: data})});
   }
 
 
@@ -48,7 +51,7 @@ componentDidMount() {
     })
   }
 
-
+fet
 
   
 
@@ -83,13 +86,24 @@ componentDidMount() {
 
 render() {
   return (
+<<<<<<< HEAD
     <div className="App container-grid">
     <Header />
     <PodcastIndex edit={this.updatePodcast} podcasts={this.state.podcasts} />
+=======
+
+    <div className="App container-grid">
+    <Header />
+    <PodcastIndex edit={this.updatePodcast} view={this.fetchAllReviews} podcasts={this.state.podcasts} />
+>>>>>>> upstream/master
     <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleCreateModal}/>
     {this.state.selectedPodcast ?
     <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast}/>
     : null}
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
     <div class="container-grid aside-1 podcastDetails">
         <h3 class="heading-2">Podcast Details<br/>
         </h3>
@@ -109,6 +123,12 @@ render() {
         </ul>
       </div>
     <Footer />
+<<<<<<< HEAD
+=======
+
+    {/* {<ReviewList reviews={this.state.reviews} handleDeleteClick={this.handleDeleteClick} /> } */}
+
+>>>>>>> upstream/master
     </div>
   );
 }

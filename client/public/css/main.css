@@ -229,7 +229,6 @@
   z-index: 3;
 }
 
-<<<<<<< HEAD
 #ptpLogo {
   width: 180px;
   height: 180px;
@@ -237,13 +236,11 @@
   top: -30px;
   left: 435px;
 }
-=======
 .podcastThumb {
   height: 200px;
   width: 200px;
 }
 
->>>>>>> upstream/master
 @media screen and (min-width: 75rem) {
   /* Layout Elements */
 

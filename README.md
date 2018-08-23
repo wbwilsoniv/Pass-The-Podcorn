@@ -2,6 +2,7 @@
 Pass the Podcorn is a podcast review app where users can see various podcasts and leave a review on a podcast if they've heard it before! They will have full CRUD capabilities with whatever podcasts they’ve created and can also add new podcasts and reviews. 
 
 
+
 ## Motivation
 
 We wanted a resource to share podcasts. We thought this would be a cool project to work on for our group project considering that all of us really love listening to them. 

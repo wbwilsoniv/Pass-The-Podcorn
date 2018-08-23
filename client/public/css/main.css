@@ -13,8 +13,7 @@
 }
 
 .container-grid.header {
-  background-color: #907dc5;
-
+  background-color: rgb(255, 0, 0);
   grid-area: header;
 }
 
@@ -29,20 +28,22 @@
 }
 
 .container-grid.aside-1 {
-  background-color: #d27a87;
+  background-color: #fff;
   height: 45vh;
+  overflow-y: scroll;
   grid-area: aside-1;
 }
 
 .container-grid.main {
-  background-color: #acac62;
+  background-color: #fff;
   height: 80vh;
   grid-area: main;
 }
 
 .container-grid.aside-2 {
-  background-color: #699b3b;
+  background-color: #fff;
   height: 35vh;
+  overflow-y: scroll;
   grid-area: aside-2;
 }
 
@@ -228,6 +229,13 @@
   z-index: 3;
 }
 
+#ptpLogo {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  top: -30px;
+  left: 435px;
+}
 .podcastThumb {
   height: 200px;
   width: 200px;

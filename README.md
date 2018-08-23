@@ -1,5 +1,5 @@
 # Pass-The-Podcorn
-Pass the Podcorn is a podcast review app where users can listen to trailers for podcasts and if they’ve already seen the podcast, they can leave a review! They will have full CRUD abilities with whatever reviews they’ve created and can also add new podcasts.  Users can also leave likes or ratings on different reviews.
+Pass the Podcorn is a podcast review app where users can see various podcasts and leave a review on a podcast if they've heard it before! They will have full CRUD capabilities with whatever podcasts they’ve created and can also add new podcasts and reviews. 
 
 
 ## Motivation
@@ -61,8 +61,6 @@ function showAll(req, res) {
 ![Wireframe](/wireframes/PodcastVotes.png)
 ![Wireframe](/wireframes/SortByGenre.png)
 ![Wireframe](/wireframes/PodcastReview.png)
-
-
 
 
 More can be found in the Wireframes folder.

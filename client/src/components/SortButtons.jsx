@@ -2,8 +2,8 @@ import React from 'react';
 
 function SortButtons(props) {
     return (
-        <div>
-            <input onChange={props.search} value={props.searchBar} name="text-name" type="text" placeholder="Search Genre"/>
+        <div className="sortBtnDiv">
+            <span><input onChange={props.search} value={props.searchBar} name="text-name" type="text" placeholder="Search Genre"/></span>
             <button onClick={e => props.filterFunction('Gaming')} type="button" className="btn podcastSortBtn">Gaming</button>
             <button onClick={e => props.filterFunction('True Crime')} type="button" className="btn podcastSortBtn">True Crime</button>
             <button onClick={e => props.filterFunction('All')} type="button" className="btn podcastSortBtn">All</button>

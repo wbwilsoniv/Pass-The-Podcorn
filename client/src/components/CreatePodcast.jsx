@@ -34,7 +34,7 @@ class CreatePodcast extends Component {
 
   render() {
     return (
-      <div>
+      <div className="createBtnDiv">
         <button onClick={this.props.toggle}>Create Podcast</button>
         <div className={this.props.active}>
           <div className="modal-background"></div>

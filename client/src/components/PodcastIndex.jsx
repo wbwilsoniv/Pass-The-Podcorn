@@ -24,7 +24,6 @@ class PodcastIndex extends Component {
       })
     
     let afterSearch = filteredList.filter(podcast => podcast.title.toLowerCase().includes(this.state.search.toLowerCase()));
-
     return (
       <div className="container-grid main podcasts">
         <h2 className="heading-1">Podcasts</h2>

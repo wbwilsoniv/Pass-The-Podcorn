@@ -13,7 +13,11 @@
 }
 
 .container-grid.header {
+<<<<<<< HEAD
   background-color: rgb(255, 61, 65);
+=======
+  background-color: rgb(255, 0, 0);
+>>>>>>> upstream/master
   grid-area: header;
 }
 
@@ -29,20 +33,32 @@
 
 .container-grid.aside-1 {
   background-color: #fff;
+<<<<<<< HEAD
   height: 40vh;
+=======
+  height: 45vh;
+>>>>>>> upstream/master
   overflow-y: scroll;
   grid-area: aside-1;
 }
 
 .container-grid.main {
   background-color: #fff;
+<<<<<<< HEAD
   height: 70vh;
+=======
+  height: 80vh;
+>>>>>>> upstream/master
   grid-area: main;
 }
 
 .container-grid.aside-2 {
   background-color: #fff;
+<<<<<<< HEAD
   height: 30vh;
+=======
+  height: 35vh;
+>>>>>>> upstream/master
   overflow-y: scroll;
   grid-area: aside-2;
 }
@@ -96,7 +112,8 @@
     vertical-align: text-top;
     text-align: center;
     font-size: 36px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;*/
     line-height: .6;
 
     -webkit-align-self: auto;
@@ -236,6 +253,10 @@
   top: -30px;
   left: 435px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
 .podcastThumb {
   height: 200px;
   width: 200px;

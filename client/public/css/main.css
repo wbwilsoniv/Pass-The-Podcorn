@@ -13,7 +13,7 @@
 }
 
 .container-grid.header {
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(255, 61, 65);
   grid-area: header;
 }
 
@@ -29,20 +29,20 @@
 
 .container-grid.aside-1 {
   background-color: #fff;
-  height: 45vh;
+  height: 40vh;
   overflow-y: scroll;
   grid-area: aside-1;
 }
 
 .container-grid.main {
   background-color: #fff;
-  height: 80vh;
+  height: 70vh;
   grid-area: main;
 }
 
 .container-grid.aside-2 {
   background-color: #fff;
-  height: 35vh;
+  height: 30vh;
   overflow-y: scroll;
   grid-area: aside-2;
 }
@@ -72,13 +72,13 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
   }
   h3 {
-    color: rgb(255, 0, 0);
+    color: rgb(255, 61, 65);
   }
   h2 {
-    color: rgb(255, 0, 0);
+    color: rgb(255, 61, 65);
   }
   h4 {
-    color:red;
+    color:rgb(255, 61, 65);
     font-size: 20px;
   }
 
@@ -142,7 +142,7 @@
   }
 
   .container-grid.header {
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(235, 70, 50);
     height: 120px;
   }
 

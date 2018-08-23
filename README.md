@@ -108,6 +108,9 @@ To test it out yourself, feel free to fork and clone this repo.
 
 ### Things to be added later:
 1. User Authentication
+1. Thumbs up and down for reviews
+1. Delete and edit reviews with user authentication
+
 
 
 ## Credits

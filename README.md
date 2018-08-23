@@ -56,7 +56,7 @@ function showAll(req, res) {
 
 
 ## Appshots & Wireframes
-![Wireframe](/wireframes/ERD.png)
+![erd](https://user-images.githubusercontent.com/39752800/44556483-fad9fd80-a707-11e8-8e48-26adfefb8e49.png)
 ![Wireframe](/wireframes/ShowAllShowOne.png)
 ![Wireframe](/wireframes/CreatePodcast.png)
 ![Wireframe](/wireframes/PodcastVotes.png)

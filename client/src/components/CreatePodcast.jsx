@@ -11,18 +11,24 @@ class CreatePodcast extends Component {
       episodes: '',
       description: '',
       poster_url: 'https://static.thenounproject.com/png/187803-200.png',
-      trailer_url: ''
+      trailer_url: '' 
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle(e) {
+    e.preventDefault();
+    this.props.toggle('createModal')
   }
 
   handleSubmit(evt) {
     evt.preventDefault();
     this.props.onSubmit(this.state);
     console.log('Submitting', this.state);
-    this.props.toggle();
+    this.props.toggle('createModal');
   }
 
   handleChange(evt) {
@@ -32,16 +38,22 @@ class CreatePodcast extends Component {
     });
   }
 
+
   render() {
     return (
+<<<<<<< HEAD
       <div className="createBtnDiv">
         <button onClick={this.props.toggle}>Create Podcast</button>
+=======
+      <div>
+        <button onClick={this.toggle}>Create Podcast</button>
+>>>>>>> upstream/master
         <div className={this.props.active}>
           <div className="modal-background"></div>
           <div className="modal-card">
             <header className="modal-card-head">
               <p className="modal-card-title">Create Podcast</p>
-              <button onClick={this.props.toggle} className="delete" aria-label="close"></button>
+              <button onClick={this.toggle} className="delete" aria-label="close"></button>
             </header>
             <section className="modal-card-body">
               <div>
@@ -49,12 +61,12 @@ class CreatePodcast extends Component {
                   <input
                     type="text"
                     name="title"
-                    required="required"
+                    required="required" 
                     value={this.state.title}
                     onChange={this.handleChange}
                     placeholder="Title"
                   />
-                  <br />
+                  <br/>
                   <input
                     type="text"
                     name="creator"
@@ -64,15 +76,20 @@ class CreatePodcast extends Component {
                     placeholder="Creator"
                   />
                   <br />
-                  <input
-                    type="text"
-                    name="genre"
-                    required="required"
-                    value={this.state.genre}
-                    onChange={this.handleChange}
-                    placeholder="Genre"
-                  />
-                  <br />
+                  <select 
+                  name="genre"
+                  onChange={this.handleChange}
+                  required="required"
+                  >
+                    <option value="" disabled selected hidden>Select Genre</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Political">Political</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="True Crime">True Crime</option>
+                    <option value="General">General</option>
+                  </select>
+                  <br/>
                   <input
                     type="number"
                     name="episodes"
@@ -81,7 +98,7 @@ class CreatePodcast extends Component {
                     onChange={this.handleChange}
                     placeholder="Episodes"
                   />
-                  <br />
+                  <br/>
                   <input
                     type="text"
                     name="description"
@@ -90,27 +107,27 @@ class CreatePodcast extends Component {
                     onChange={this.handleChange}
                     placeholder="Description"
                   />
-                  <br />
+                  <br/>
                   <input
                     type="text"
-                    name="poster_url"
+                    name="poster"
                     value={this.state.poster_url}
                     onChange={this.handleChange}
-                    placeholder="Poster Url"
+                    placeholder="Poster url"
                   />
-                  <br />
+                  <br/>
                   <input
                     type="text"
-                    name="trailer_url"
+                    name="trailer"
                     value={this.state.trailer_url}
                     onChange={this.handleChange}
-                    placeholder="Trailer Url"
+                    placeholder="Trailer url"
                   />
                   <br />
                   <br />
                   <footer className="modal-card-foot">
-                    <button type="submit" value="Create Podcast" className="button is-success">Save changes</button>
-                    <button onClick={this.props.toggle} className="button">Cancel</button>
+                    <button type="submit" value="Create Podcast" className="button is-success">Create Podcast</button>
+                    <button onClick={this.toggle} className="button">Cancel</button>
                   </footer>
                 </form>
               </div>

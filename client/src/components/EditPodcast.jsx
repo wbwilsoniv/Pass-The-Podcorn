@@ -18,6 +18,7 @@ class EditPodcast extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggle =  this.toggle.bind(this);
+    this.delete = this.delete.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -35,6 +36,10 @@ class EditPodcast extends Component {
       })
     }
   }
+  toggle(e) {
+    e.preventDefault();
+    this.props.toggle('editModal');
+  }
 
   handleSubmit(evt) {
     evt.preventDefault();
@@ -49,12 +54,15 @@ class EditPodcast extends Component {
       id: this.state.id
     }
     this.props.onSubmit(data);
-    this.props.toggle();
+    this.props.toggle('editModal');
   }
 
-  toggle(e) {
+
+  delete(e) {
+    debugger
     e.preventDefault();
-    this.props.toggle();
+    this.props.delete(this.state.id)
+    this.props.toggle('editModal');
   }
 
   handleChange(evt) {
@@ -62,6 +70,11 @@ class EditPodcast extends Component {
     this.setState({
       [name]: value,
     });
+  }
+
+  onClick(evt) {
+    const id = evt.target.podcast_id
+    this.props.deletePodcast(id)
   }
 
   render() {
@@ -72,7 +85,7 @@ class EditPodcast extends Component {
           <div className="modal-card">
             <header className="modal-card-head">
               <p className="modal-card-title">Edit Podcast</p>
-              <button onClick={this.props.toggle} className="delete" aria-label="close"></button>
+              <button onClick={this.toggle} className="delete" aria-label="close"></button>
             </header>
             <section className="modal-card-body">
               <div>
@@ -133,13 +146,12 @@ class EditPodcast extends Component {
                     placeholder="Trailer Url"
                   />
                   <br />
-                  {/* <input type="submit" value="Delete Podcast" /> */}
                   <br />
                   <br />
                   <footer className="modal-card-foot">
                     <button type="submit" value="Edit Podcast" className="button is-success">Save changes</button>
                     <button onClick={this.toggle} className="button">Cancel</button>
-                    <button className="button is-danger">Delete Podcast</button>
+                    <button onClick={this.delete} className="button is-danger">Delete Podcast</button>
                   </footer>
                 </form>
               </div>

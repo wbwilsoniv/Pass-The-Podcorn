@@ -69,10 +69,18 @@ More can be found in the Wireframes folder.
 
 
 ## User Stories
-1. As a user I want to see a list of reviews for a certain podcast of my choosing.
-1. As a person who doesn't like to read stories, I would like to find a listen to people tell stories on podcasts.
+1. As a person who doesn't like to read stories, I would like to find and listen to people tell stories on podcasts.. 
+1. As a user I want to see a list of reviews for a certain podcast of my choosing. 
 1. As a person with a long commute to work I would like to find new podcasts to listen to on the subway.
 1. As an avid podcast listener I would like to share my love for podcasts by writing reviews and sharing favorite moments from my favorite podcasts.
+
+1. As a user I want to see a collection of podcasts.
+1. As a user I want to sort the podcasts by genre.
+1. As a user I want to see a description of each podcast.
+1. As a user I want to see reviews of a podcast.
+1. As a user I want to add / edit / delete a podcast.
+1. As a user I want to review a podcast.
+
 
 ## Built with
 

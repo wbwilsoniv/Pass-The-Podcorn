@@ -41,13 +41,8 @@ class CreatePodcast extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
       <div className="createBtnDiv">
-        <button onClick={this.props.toggle}>Create Podcast</button>
-=======
-      <div>
         <button onClick={this.toggle}>Create Podcast</button>
->>>>>>> upstream/master
         <div className={this.props.active}>
           <div className="modal-background"></div>
           <div className="modal-card">

@@ -115,13 +115,6 @@ class App extends Component {
       });
   }
 
-<<<<<<< HEAD
-    searchBar(data) {
-      this.setState({
-        searchBar: data
-      });
-    }
-=======
   deletePodcast(id) {
     deletePodcast(id)
       .then(data => {
@@ -133,7 +126,6 @@ class App extends Component {
           }));
       });
   }
->>>>>>> upstream/master
 
   onSubmit(podcast) {
     savePodcast(podcast)
@@ -172,23 +164,13 @@ class App extends Component {
     return (
       <div className="App main-grid">
         <Header />
-<<<<<<< HEAD
-        <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleCreateModal} />
-        <PodcastIndex edit={this.getOnePodcast} view={this.fetchAllReviews} podcasts={this.state.podcasts} filter={this.state.selectedGenre} filterFunction={this.genreFilter} search={this.searchBar}/>
-        <PodcastDetails podcast={this.state.podcastDetails} edit={this.getOnePodcast} />
-        {this.state.selectedPodcast ?
-          <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast} active={this.state.editModal} toggle={this.toggleEditModal}/>
-          : null}
-        <ReviewIndex reviews={this.state.reviews}/>
-=======
         <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleModal} />
         <CreateReview onSubmit={this.createReview} active={this.state.createReviewModal} toggle={this.toggleCreateReviewModal} />
         <PodcastIndex edit={this.getOnePodcast} view={this.fetchAllReviews} podcasts={this.state.podcasts} filter={this.state.selectedGenre} filterFunction={this.genreFilter} search={this.searchBar} />
         <ReviewIndex reviews={this.state.reviews} create={this.toggleCreateReviewModal} podcastSelected={this.state.podcastDetails} />
         <PodcastDetails podcast={this.state.podcastDetails} edit={this.getOnePodcast} /> {this.state.selectedPodcast ?
-          <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast} active={this.state.editModal} toggle={this.toggleModal} delete={this.deletePodcast} />
+        <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast} active={this.state.editModal} toggle={this.toggleModal} delete={this.deletePodcast} />
           : null}
->>>>>>> upstream/master
         <Footer />
       </div>
     );

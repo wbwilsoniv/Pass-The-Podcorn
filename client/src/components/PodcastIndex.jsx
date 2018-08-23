@@ -16,6 +16,7 @@ class PodcastIndex extends Component {
   }
 
   render() {
+    // Filters podcast by Genre
     let filteredList = [];
     this.props.filter === 'All' ? filteredList = this.props.podcasts
       :
@@ -23,6 +24,7 @@ class PodcastIndex extends Component {
         return podcast.genre === this.props.filter
       })
     
+      // Allows the updated podcast list to be searchable from the search bar
     let afterSearch = filteredList.filter(podcast => podcast.title.toLowerCase().includes(this.state.search.toLowerCase()));
     return (
       <div className="container-grid main podcasts">
@@ -30,7 +32,7 @@ class PodcastIndex extends Component {
         <SortButtons search={this.handleChange} filterFunction={this.props.filterFunction} searchBar={this.state.search} />
         {afterSearch.map(podcast => (
           <div className="list-container" key={podcast.id}>
-            <img src={podcast.poster_url} alt="Podcast Poster"/><a onClick={(e) => this.props.view(podcast.id, [podcast])}><p className='podcastList' key={podcast.id}>{podcast.title} {podcast.creator}</p></a>
+            <a onClick={(e) => this.props.view(podcast.id, [podcast])}><img src={podcast.poster_url} alt="Podcast Poster"/><p className='podcastList' key={podcast.id}>{podcast.title}<br/>Creator: {podcast.creator}</p></a>
           </div>))}
       </div>
     )

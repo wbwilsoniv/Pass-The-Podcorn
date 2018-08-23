@@ -27,7 +27,6 @@ class App extends Component {
       selectedGenre: 'All',
       searchBar: '',
       podcastDetails: [{}],
-
     }
     this.fetchAllReviews = this.fetchAllReviews.bind(this);
     this.getOnePodcast = this.getOnePodcast.bind(this);
@@ -41,6 +40,7 @@ class App extends Component {
     this.toggleCreateReviewModal = this.toggleCreateReviewModal.bind(this);
     this.toggleEditModal = this.toggleEditModal.bind(this);
     this.deletePodcast = this.deletePodcast.bind(this);
+    this.toggleModal =  this.toggleModal.bind(this);
   }
 
 
@@ -76,7 +76,7 @@ class App extends Component {
         this.setState({
           selectedPodcast: data
         });
-        this.toggleEditModal();
+        this.toggleModal('editModal');
       })
   }
 
@@ -121,7 +121,11 @@ class App extends Component {
       deletePodcast(id)
       .then(data => {
         fetchPodcasts()
-        .then(data => this.setState({ podcasts: data }));
+        .then(data => this.setState({ 
+          podcasts: data ,
+          reviews: [],
+          podcastDetails: [{}],
+        }));
         });
       }
 
@@ -138,20 +142,22 @@ class App extends Component {
       })
   }
 
-
-
-  toggleCreateModal() {
-    this.state.createModal === 'modal'
+  toggleModal(modal) {
+    this.state[modal] === 'modal'
       ?
       this.setState({
-        createModal: 'modal is-active'
+        [modal]: 'modal is-active'
       })
       :
       this.setState({
-        createModal: 'modal'
+        [modal]: 'modal'
       })
   }
-
+  createPodcast(podcast) {
+    savePodcast(podcast)
+      .then(data => {
+        fetchPodcasts()
+          .then(data => this.setState({ podcasts: data }));
   toggleEditModal() {
     this.state.editModal === 'modal'
       ?
@@ -182,10 +188,10 @@ class App extends Component {
 
       <div className="App main-grid">
         <Header />
-        <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleCreateModal} />
+        <CreatePodcast onSubmit={this.createPodcast} active={this.state.createModal} toggle={this.toggleModal} />
         <CreateReview onSubmit={this.createReview} active={this.state.createReviewModal} toggle={this.toggleCreateReviewModal} />
         <PodcastIndex edit={this.getOnePodcast} view={this.fetchAllReviews} podcasts={this.state.podcasts} filter={this.state.selectedGenre} filterFunction={this.genreFilter} search={this.searchBar} />
-        <ReviewIndex reviews={this.state.reviews} create={this.toggleCreateReviewModal} />
+        <ReviewIndex reviews={this.state.reviews} create={this.toggleCreateReviewModal} podcastSelected={this.state.podcastDetails}/>
         <PodcastDetails podcast={this.state.podcastDetails} edit={this.getOnePodcast} /> {this.state.selectedPodcast ?
           <EditPodcast podcast={this.state.selectedPodcast} onSubmit={this.updatePodcast} active={this.state.editModal} toggle={this.toggleEditModal} delete={this.deletePodcast} />
           : null}
@@ -194,6 +200,4 @@ class App extends Component {
     );
   }
 }
-
-
 export default App;

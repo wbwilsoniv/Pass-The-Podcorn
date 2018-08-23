@@ -84,18 +84,18 @@ More can be found in the Wireframes folder.
 
 ## Built with
 
-[GitHub] (https://code.visualstudio.com/)
-[GitHub] EJS
-[GitHub] Express
-[GitHub] Morgan
-[GitHub] Heroku
-[GitHub] React
-[GitHub] React-dom
-[GitHub] React-scripts
-[GitHub] Cors
-[GitHub] Nodemon
-[GitHub] PG-Promise
-[GitHub] Body-Parser
+* Visual Studio Code
+* EJS
+* Express
+* Morgan
+* Heroku
+* React
+* React-dom
+* React-scripts
+* Cors
+* Nodemon
+* PG-Promise
+* Body-Parser
 
  
 

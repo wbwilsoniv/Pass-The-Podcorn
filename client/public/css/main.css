@@ -13,7 +13,11 @@
 }
 
 .container-grid.header {
+<<<<<<< HEAD
   background-color: rgb(255, 61, 65);
+=======
+  background-color: rgb(231, 100, 75);
+>>>>>>> upstream/master
   grid-area: header;
 }
 
@@ -72,10 +76,17 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
   }
   h3 {
+<<<<<<< HEAD
     color: rgb(255, 61, 65);
   }
   h2 {
     color: rgb(255, 61, 65);
+=======
+    color:  rgb(218, 90, 70);
+  }
+  h2 {
+    color:  rgb(218, 90, 70);
+>>>>>>> upstream/master
   }
   h4 {
     color:rgb(255, 61, 65);
@@ -83,7 +94,7 @@
   }
 
   span {
-    color: rgb(196, 196, 209);
+    color: black;
     font-size: 18px;
   }
 
@@ -113,12 +124,21 @@
 
 .reviews-1 {
   color: #acac62;
+<<<<<<< HEAD
   font-weight: 700;
 }
 
 .reviews-2 {
   color: black;
   font-weight: 700;
+=======
+  font-weight: 600;
+}
+
+.reviews-2 {
+  color: #acac62;
+  font-weight: 600;
+>>>>>>> upstream/master
 }
 
   h2.pass {
@@ -145,7 +165,11 @@
   }
 
   .container-grid.header {
+<<<<<<< HEAD
     background-color: rgb(235, 70, 50);
+=======
+    background-color: rgb(218, 90, 70);
+>>>>>>> upstream/master
     height: 120px;
   }
 
@@ -238,7 +262,7 @@
   height: 180px;
   position: absolute;
   top: -30px;
-  left: 435px;
+  left: 310px;
 }
 .podcastThumb {
   height: 200px;

@@ -26,8 +26,6 @@ img {
   width: 100px;
 }
 
-
-
 .podcastList {
 
   width: 350px;
@@ -36,9 +34,10 @@ img {
 }
 
 .podcastTitle {
-  font-family: 'Cabin Sketch', cursive;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
    color: rgb(63, 57, 57);
    font-size: 30px;
+   font-weight: 700;
 }
 
 li {
@@ -68,4 +67,10 @@ label {
   width: 137px;
   text-align: right;
   padding-right: 7px;
+}
+
+.searchInput {
+  background-image: url('https://static.legacy.net/obituaries/images/obituary/obituaryportal/icon_search.png');
+  background-repeat: no-repeat;
+  background-position: right;
 }
